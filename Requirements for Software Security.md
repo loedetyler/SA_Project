@@ -88,7 +88,11 @@ Security Requirements:
 
 **SR15:** Zulip does provide E2EE but there are limitations noted in their push notification services documentation.
 
-Personal Reflection:
+**Personal Reflection:**
+Because of Apple and Google notification services’ security models, Zulip is not able to send push notifications themselves. Thus a Push Notification Service acts as a middle-man. It receives notifications from Zulip servers and
+sends that to the respective Apple or Google notification services with the required information. This leads to some security concerns that we discovered in our misuse case analysis and from reading the documentation. In this 
+analysis, we determined multiple misuse cases (listed above) where a malicious user would want to cause harm to users’ systems or disrupt operations or steal data from a legitimate user. Most of these security issues are covered
+due to the notifications needing to go through Apple or Google’s push notification services but that doesn’t cover every possible issue.
 
 
 ## 4) Software issues
