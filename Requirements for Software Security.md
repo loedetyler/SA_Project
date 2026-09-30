@@ -98,8 +98,14 @@ This could also allow access to the user's account or server depending on the li
 
 **SR15:** Zulip does provide E2EE but there are limitations noted in their push notification services documentation.
 
-**Personal Reflection:**
+**Reflection**
+Because of Apple and Google notification services’ security models, Zulip is not able to send push notifications themselves. Thus a Push Notification Service acts as a middle-man. It receives notifications from Zulip servers
+and sends that to the respective Apple or Google notification services with the required information. This leads to some security concerns that we discovered in our misuse case analysis and from reading the documentation. In 
+this analysis, we determined multiple misuse cases (listed above) where a malicious user would want to cause harm to users’ systems or disrupt operations or steal data from a legitimate user. Most of these security issues are 
+covered due to the notifications needing to go through Apple or Google’s push notification services but that doesn’t cover every possible issue.
 
+**Personal Reflection:**
+I learned there are many ways of going about doing a use and misuse case, there are so many possible topics to choose from especially when looking at an open source project that I think the hardest part was picking something to start on. Also reflecting on the use and misuse cases was a bit challenging for me despite having the use cases and misuse cases listed. I think the most useful part was finding one thread to pull on and then other pieces seemed to fall into place. Finding one use case led to one or multiple misuse cases and then that would be like a piece to a puzzle on a diagram. Seeing the diagram come together was also really satisfying.
 
 ## 4) Software issues
 
